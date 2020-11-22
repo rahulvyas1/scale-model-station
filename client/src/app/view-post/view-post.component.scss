@@ -7,13 +7,20 @@
 
 .project-assets{
     background:black;
-    overflow: hidden;
+    overflow: scroll;
 }
 .project-sidebar{
-    // background:blue;
+    color:white;
+    overflow: scroll;
+    position: relative;
     background: #171717;
 }
 
 .post-img{
-    width:80%;
+   max-width:60%;
+}
+
+.profile-title{
+    font-size: 0.8em;
+    font-weight: 300;
 }

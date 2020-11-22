@@ -21,8 +21,11 @@ router.post("/api/posts/new",
 
         //@ts-ignore
         const user = await User.findOne({ $or: [{ googleId: req.user!.id }], });
-        console.log("user", user)
-        const post = Post.build({ title, description: description || "", photos, user: user?.toObject(), postId: nanoid() })
+        console.log("user", user);
+        if(!user){
+            throw new Error("User not found!");
+        }
+        const post = Post.build({ title, description: description || "", photos, user: user, postId: nanoid() })
         await post.save();
         res.status(201).send(post)
     })

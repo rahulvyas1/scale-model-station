@@ -25,7 +25,7 @@ interface PostModel extends mongoose.Model<PostDoc> {
 interface PostDoc extends mongoose.Document {
     postId: string;
     title: string;
-    user: string;
+    user: UserDoc;
     description?: string;
     photos: Array<string>;
 }
@@ -49,7 +49,7 @@ const postSchema = new mongoose.Schema({
         ref: 'User'
     },
     photos: {
-        type: [String],
+        type: [],
         required: true
     },
 }, {

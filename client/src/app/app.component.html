@@ -1,19 +1,64 @@
 <!-- <div class="container-fluid"> -->
 
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark d-flex">
 
-    <a class="navbar-brand" href="#" >Scale Model Station</a>
-    <form class="form-inline my-2 my-lg-0 col-8 flex-grow-1 position-relative">
-      <fa-icon [icon]="faSearch" class="main-menu-search-icon pl-3"></fa-icon>
-      <input class="form-control mr-sm-2 w-100 pl-5" type="search" placeholder="Search" aria-label="Search" >
-    </form>
-    <form class="form-inline my-2 my-lg-0">
-      <button class="btn my-2 my-sm-0 w-100 btn-primary" id="signupBtn" type="submit">SIGN IN</button>
-    </form>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+
+        <img src="../assets/images/logo-icon.svg" width="30" height="30" class="d-inline-block align-top" alt=""/>
+        <img src="../assets/images/logo-text.svg" height="20" class="ml-2"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <form class="form-inline my-2 my-lg-0 flex-grow-1 position-relative">
+          <fa-icon [icon]="faSearch" class="main-menu-search-icon pl-3"></fa-icon>
+          <input class="form-control mr-sm-2 w-100 pl-5" type="search" placeholder="Search" aria-label="Search" >
+        </form>
+        <div class="form-inline my-2 my-lg-0">
+           <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+          <button class="btn my-2 my-sm-0 btn-primary" id="signupBtn" type="submit" (click)="openModal(template)">
+            <fa-icon [icon]="faSignInAlt"></fa-icon>
+            <span class="ml-2">SIGN IN</span></button>
+          </div>
+      </div>
+    </div>
   </nav>
-<br/>
-<br/>
 
 
   <router-outlet></router-outlet>
 
+
+
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Sign In with Google</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <fa-icon [icon]="faTimes" class="icn-close"></fa-icon>
+      </button>
+
+    </div>
+    <div class="modal-body">
+
+      <alert type="warning">
+        Currently we only support login via Google. We will be adding more ways to login soon.
+      </alert>
+
+      <div class="w-100 d-flex justify-content-center ">
+
+        <span class="btn btn-default"
+        >
+        <fa-icon [icon]="faGoogle" class="icn"></fa-icon>
+        Sign in with Google
+      </span>
+      </div>
+    </div>
+  </ng-template>

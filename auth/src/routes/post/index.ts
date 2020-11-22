@@ -6,7 +6,7 @@ const router = express.Router();
 router.get(
     "/api/posts",
     async (req: Request, res: Response) => {
-        const posts = await Post.find().sort([['_id', -1]]).limit(30).populate('User').exec();
+        const posts = await Post.find().sort([['_id', -1]]).limit(30).populate('user');
         res.send(posts)
     })
 
