@@ -1,7 +1,41 @@
-<ngx-masonry>
-  <a routerLink="/view-post">
-    <div ngxMasonryItem class="masonry-item" *ngFor="let item of masonryItems">
-     <img src="https://picsum.photos/seed/picsum/300/600"/>
+
+
+<carousel
+  [itemsPerSlide]="itemsPerSlide"
+  [singleSlideOffset]="false"
+  [interval]="false"
+  [indicatorsByChunk]="true"
+>
+  <slide *ngFor="let cat of modelCategories; let index = index">
+    <div class="categories-slide" [class.category-active]="index === activeModelCategory">
+    <img
+      [src]="cat.background"
+      alt="image cat"
+      style="display: block; width: 100%"
+    />
+      <div class="carousel-caption">
+        <h4>{{ cat.title }}</h4>
+      </div>
     </div>
-  </a>
-  </ngx-masonry>
+  </slide>
+</carousel>
+
+<div>
+  <tabset class="">
+    <tab heading="All" id="tab1">
+      <ngx-masonry>
+        <a routerLink="/view-post">
+          <div
+            ngxMasonryItem
+            class="masonry-item"
+            *ngFor="let item of masonryItems"
+          >
+            <img src="https://picsum.photos/seed/picsum/200/200" />
+          </div>
+        </a>
+      </ngx-masonry>
+    </tab>
+    <tab heading="latest">Latest</tab>
+    <tab heading="liked">Most Liked</tab>
+  </tabset>
+</div>

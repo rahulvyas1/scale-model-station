@@ -16,6 +16,9 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
 import { NgxMasonryModule } from 'ngx-masonry';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -39,6 +42,8 @@ import { ViewPostComponent } from './view-post/view-post.component';
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     AlertModule.forRoot(),
+    TabsModule.forRoot(),
+    CarouselModule.forRoot(),
     NgxMasonryModule,
     FontAwesomeModule,
     NgSelectModule,
