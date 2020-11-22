@@ -1,0 +1,115 @@
+<div class="container ml-2 mr-2">
+  <h1>Title</h1>
+  <div class="row">
+    <div class="col-lg-9">
+      <!-- [START] Block 1  -->
+      <div class="w-100 p-2">
+        <div class="bg-g-3 p-2 pl-3">
+          <span style="color: white">Build Title</span>
+        </div>
+        <div class="bg-g-2 p-2 pl-3">
+          <div class="my-2 mb-2">
+            <input type="text" placeholder="title" class="form-control" />
+          </div>
+        </div>
+      </div>
+      <!-- [END] Block 1  -->
+
+      <!-- [START] Block 2  -->
+      <div class="w-100 assets-uploader">
+        <span class="btn btn-default"
+          ><input
+            multiple=""
+            name="asset[image]"
+            ng2fileselect=""
+            type="file"
+            accept="image/png,image/jpeg,image/gif"
+          />
+          <fa-icon [icon]="faUpload" class="icn"></fa-icon>
+          Upload media files
+        </span>
+      </div>
+      <!-- [END] Block 2 -->
+
+      <!-- [START] Block 3  -->
+      <div class="w-100 p-2">
+        <div class="bg-g-3 p-2 pl-3">
+          <span style="color: white">Build Details</span>
+        </div>
+        <div class="bg-g-2 p-2 pl-3">
+          <div class="my-2 mb-2">
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1"
+                >Description (upto 400 words)</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="6"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Tags</label>
+              <!--Using ng-option and for loop-->
+              <ng-select [(ngModel)]="selectedCar" [addTag] [multiple]="true" >
+                <ng-option *ngFor="let car of cars" [value]="car.id">{{
+                  car.name
+                }}</ng-option>
+              </ng-select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [END] Block 3  -->
+    </div>
+    <div class="col-lg-3">
+      <!-- [START] Block 1  -->
+      <div class="alert alert-warning" role="alert">
+        This is a warning alert—check it out!
+      </div>
+      <!-- [END] Block 1  -->
+
+      <!-- [START] Block 2  -->
+      <div class="w-100 p-2">
+        <div class="bg-g-3 p-2 pl-3">
+          <span style="color: white">Build Title</span>
+        </div>
+        <div class="bg-g-2 p-2 pl-3">
+          <div class="my-2 mb-2">
+            <button type="button" class="btn btn-primary col-12">
+              <fa-icon [icon]="faSave" class=""></fa-icon
+              ><span> Save for later</span>
+            </button>
+            <button type="button" class="btn btn-success col-12 mt-2">
+              <fa-icon [icon]="faPaperPlane" class=""></fa-icon
+              ><span> Publish</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- [END] Block 2  -->
+
+      <!-- [START] Block 3  -->
+
+      <div class="w-100 p-2">
+        <div class="bg-g-3 p-2 pl-3">
+          <span style="color: white">Thumbnail</span>
+        </div>
+        <div class="bg-g-2 p-2 pl-3">
+          <span class="btn btn-default"
+            ><input
+              multiple=""
+              name="asset[image]"
+              ng2fileselect=""
+              type="file"
+              accept="image/png,image/jpeg,image/gif"
+            />
+            <fa-icon [icon]="faUpload" class="icn"></fa-icon>
+            Upload image
+          </span>
+        </div>
+      </div>
+      <!-- [END] Block 3 -->
+    </div>
+  </div>
+</div>

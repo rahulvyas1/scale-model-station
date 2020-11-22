@@ -1,0 +1,31 @@
+h1{
+    color:white;
+    font-weight: 200;
+}
+
+.assets-uploader{
+    padding: 0 12px 80px;
+    border: 2px dashed #333;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+}
+
+.btn input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 100%;
+    font-size: 100px;
+    opacity: 0;
+}
+
+label{
+    color: grey;
+    font-weight: 300;
+}
+p{
+    color: whitesmoke;
+    font-weight: 300;
+}

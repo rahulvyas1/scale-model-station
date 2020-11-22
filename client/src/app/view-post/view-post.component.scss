@@ -1,0 +1,19 @@
+
+.project-view{
+    background: #000;
+    min-height: calc(100vh - 51px);
+    min-height: calc(100vh - $main-menu-height);
+}
+
+.project-assets{
+    background:black;
+    overflow: hidden;
+}
+.project-sidebar{
+    // background:blue;
+    background: #171717;
+}
+
+.post-img{
+    width:80%;
+}
