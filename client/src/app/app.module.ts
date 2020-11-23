@@ -29,6 +29,8 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { AllPostsComponent } from './all-posts/all-posts.component';
 import { ViewPostComponent } from './view-post/view-post.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
