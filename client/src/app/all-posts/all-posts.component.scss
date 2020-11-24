@@ -1,9 +1,9 @@
 // .masonry-item { max-width: 200px; }
 
-.categories-slide {
+.slide {
   border-radius: 5px;
   overflow: hidden;
-  margin: 2vh;
+  position: relative;
 }
 .categories-slide:hover {
   cursor: pointer;
@@ -13,3 +13,4 @@
     background: rgba(19,175,240,.4);
     border-color: #13aff0;
 }
+
