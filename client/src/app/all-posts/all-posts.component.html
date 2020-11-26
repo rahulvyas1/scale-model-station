@@ -1,4 +1,4 @@
-<ngx-slick-carousel
+<!-- <ngx-slick-carousel
   class="carousel"
   #slickModal="slick-carousel"
   [config]="slideConfig"
@@ -10,39 +10,15 @@
   <div ngxSlickItem *ngFor="let slide of slides;let i = index;" class="slide" (click)="handleClickSlider(slide,i)" [class.slide-active]="selectedSlide===i">
     <span class="slide-text">{{slide.text}}</span>
     <span  *ngIf="selectedSlide===i" class="slide-opaque-bg"></span>
-    <img src="{{ slide.img }}" alt="" width="100%" />
+    <img src="{{ slide.src }}" alt="" width="100%" />
   </div>
-</ngx-slick-carousel>
+</ngx-slick-carousel> -->
 
-<!-- <button (click)="addSlide()">Add</button>
-<button (click)="removeSlide()">Remove</button>
-<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-<button (click)="slickModal.unslick()">unslick</button> -->
-
-<!-- <carousel
-  [itemsPerSlide]="itemsPerSlide"
-  [singleSlideOffset]="false"
-  [interval]="false"
-  [indicatorsByChunk]="true"
->
-  <slide *ngFor="let cat of modelCategories; let index = index">
-    <div class="categories-slide" [class.category-active]="index === activeModelCategory">
-    <img
-      [src]="cat.background"
-      alt="image cat"
-      style="display: block; width: 100%"
-    />
-      <div class="carousel-caption">
-        <h4>{{ cat.title }}</h4>
-      </div>
-    </div>
-  </slide>
-</carousel> -->
 
 <div>
   <tabset class="">
     <tab heading="All" id="tab1">
-      <ngx-masonry>
+      <!-- <ngx-masonry>
         <a routerLink="/view-post">
           <div
             ngxMasonryItem
@@ -52,7 +28,17 @@
             <img src="https://picsum.photos/seed/picsum/200/200" />
           </div>
         </a>
-      </ngx-masonry>
+      </ngx-masonry> -->
+
+      <app-grid-gallery [images]="slides"
+                  cols.xs="1"
+                  cols.sm="2"
+                  cols.md="3"
+                  cols.lg="4"
+                  cols.xl="6">
+</app-grid-gallery>
+
+
     </tab>
     <tab heading="latest">Latest</tab>
     <tab heading="liked">Most Liked</tab>

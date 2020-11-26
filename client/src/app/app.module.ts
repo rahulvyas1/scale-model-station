@@ -32,14 +32,24 @@ import { ViewPostComponent } from './view-post/view-post.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { GridGalleryComponent } from './grid-gallery/grid-gallery.component';
+import { GridGalleryItemComponent } from './grid-gallery/grid-gallery-item/grid-gallery-item.component';
 
 
+import {
+  MatButtonModule,
+  MatGridListModule,
+  MatIconModule,
+} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     AllPostsComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    GridGalleryComponent,
+    GridGalleryItemComponent
   ],
   imports: [
     ButtonsModule.forRoot(),

@@ -9,11 +9,11 @@ export class AllPostsComponent implements OnInit {
 
   selectedSlide = 0;
   slides = [
-     { text:'All',img: "http://placehold.it/350x150/000000" },
-    { text:'Aircrafts',img: "http://placehold.it/350x150/111111" },
-    {text:'AFV', img: "http://placehold.it/350x150/333333" },
-    { text:'Civil',img: "http://placehold.it/350x150/666666" },
-    {text:'Naval', img: "http://placehold.it/350x150/777777" },
+     { text:'All',src: "http://placehold.it/350x150/000000" },
+    { text:'Aircrafts',src: "http://placehold.it/350x150/111111" },
+    {text:'AFV', src: "http://placehold.it/350x150/333333" },
+    { text:'Civil',src: "http://placehold.it/350x150/666666" },
+    {text:'Naval', src: "http://placehold.it/350x150/777777" },
     // {text:'Diorama', img: "http://placehold.it/350x150/888888" },
   ];
   slideConfig = { "slidesToShow": 4, "slidesToScroll": 5 };
