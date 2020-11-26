@@ -19,8 +19,7 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
 // Import your library
-import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { NgxMasonryModule } from 'ngx-masonry';
+// import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -32,24 +31,14 @@ import { ViewPostComponent } from './view-post/view-post.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { GridGalleryComponent } from './grid-gallery/grid-gallery.component';
-import { GridGalleryItemComponent } from './grid-gallery/grid-gallery-item/grid-gallery-item.component';
 
 
-import {
-  MatButtonModule,
-  MatGridListModule,
-  MatIconModule,
-} from '@angular/material';
-import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     AllPostsComponent,
-    CreatePostComponent,
-    GridGalleryComponent,
-    GridGalleryItemComponent
+    CreatePostComponent
   ],
   imports: [
     ButtonsModule.forRoot(),
@@ -59,8 +48,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     ModalModule.forRoot(),
     AlertModule.forRoot(),
     TabsModule.forRoot(),
-    SlickCarouselModule,
-    NgxMasonryModule,
+    // SlickCarouselModule,
     FontAwesomeModule,
     NgSelectModule,
     FormsModule,
