@@ -36,7 +36,7 @@
         />
       </form>
 
-      <div class="form-inline my-2 my-lg-0" *ngIf="!isLoggedIn">
+      <div class="form-inline my-2 my-lg-0" *ngIf="!userProfile.profilePic">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">About</a>
@@ -53,10 +53,10 @@
         </button>
       </div>
 
-      <div class="form-inline my-2 my-lg-0" *ngIf="isLoggedIn">
+      <div class="form-inline my-2 my-lg-0" *ngIf="userProfile.profilePic">
         <ul class="navbar-nav mr-auto">
           <button
-            class="nav-item active btn my-2 my-sm-0"
+            class="nav-item active btn bg-transparent my-2 my-sm-0"
             id="signupBtn"
             routerLink="/create-post"
             [class.nav-item-active]="isUploadBtnClicked"
@@ -66,9 +66,9 @@
             <span class="ml-2" href="#">Upload</span>
           </button>
 
-          <button class="nav-item btn position-relative" id="" (click)="toggleUserMenu()" [class.nav-item-active]="isUserMenuOpen">
+          <button class="nav-item btn position-relative bg-transparent" id="" (click)="toggleUserMenu()" [class.nav-item-active]="isUserMenuOpen">
             <img
-              src="https://randomuser.me/api/portraits/men/32.jpg"
+              src="{{userProfile.profilePic}}"
               height="30"
               width="30"
               class="img-circle"

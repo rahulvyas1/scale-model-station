@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 // RECOMMENDED
@@ -29,6 +29,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { AllPostsComponent } from './all-posts/all-posts.component';
 import { ViewPostComponent } from './view-post/view-post.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 
@@ -52,14 +55,21 @@ import { ViewPostComponent } from './view-post/view-post.component';
     NgSelectModule,
     FormsModule,
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: 'create-post', component: CreatePostComponent},
       {path: 'view-post', component: ViewPostComponent},
       {path: '', component: AllPostsComponent},
     ]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([])
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

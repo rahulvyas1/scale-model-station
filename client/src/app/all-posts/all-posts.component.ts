@@ -7,37 +7,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllPostsComponent implements OnInit {
 
+  selectedSlide = 0;
   slides = [
-    {img: "http://placehold.it/350x150/000000"},
-    {img: "http://placehold.it/350x150/111111"},
-    {img: "http://placehold.it/350x150/333333"},
-    {img: "http://placehold.it/350x150/666666"},
-    {img: "http://placehold.it/350x150/777777"},
+     { text:'All',img: "http://placehold.it/350x150/000000" },
+    { text:'Aircrafts',img: "http://placehold.it/350x150/111111" },
+    {text:'AFV', img: "http://placehold.it/350x150/333333" },
+    { text:'Civil',img: "http://placehold.it/350x150/666666" },
+    {text:'Naval', img: "http://placehold.it/350x150/777777" },
+    // {text:'Diorama', img: "http://placehold.it/350x150/888888" },
   ];
-  slideConfig = {"slidesToShow": 4, "slidesToScroll": 4};
+  slideConfig = { "slidesToShow": 4, "slidesToScroll": 5 };
 
-  addSlide() {
-    this.slides.push({img: "http://placehold.it/350x150/777777"})
-  }
+  // addSlide() {
+  //   this.slides.push({ img: "http://placehold.it/350x150/777777" })
+  // }
 
-  removeSlide() {
-    this.slides.length = this.slides.length - 1;
-  }
+  // removeSlide() {
+  //   this.slides.length = this.slides.length - 1;
+  // }
 
-  slickInit(e) {
-    console.log('slick initialized');
-  }
+  // slickInit(e) {
+  //   console.log('slick initialized');
+  // }
 
-  breakpoint(e) {
-    console.log('breakpoint');
-  }
+  // breakpoint(e) {
+  //   console.log('breakpoint');
+  // }
 
-  afterChange(e) {
-    console.log('afterChange');
-  }
+  // afterChange(e) {
+  //   console.log('afterChange');
+  // }
 
-  beforeChange(e) {
-    console.log('beforeChange');
+  // beforeChange(e) {
+  //   console.log('beforeChange');
+  // }
+
+  handleClickSlider(slide,i) {
+    this.selectedSlide = i;
+    console.log("slide", slide)
   }
 
   activeModelCategory = 1;
