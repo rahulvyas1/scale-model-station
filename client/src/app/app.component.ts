@@ -16,7 +16,7 @@ import { UserService } from './user.service';
 })
 export class AppComponent {
   isUploadBtnClicked = false;
-  userProfile = {};
+  userProfile = {profilePic:null};
   faImages = faImages;
   faAngleUp = faAngleUp;
   faSignOutAlt = faSignOutAlt;

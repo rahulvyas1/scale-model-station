@@ -4,6 +4,7 @@ const router = express.Router();
 
 router.get("/api/users/currentuser", currentUser,  (req, res) => {
 console.log("req.user",req.user);
+console.log(req.headers)
     res.send({ currentUser: req.user || null })
 })
 

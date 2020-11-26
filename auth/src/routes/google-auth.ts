@@ -1,6 +1,7 @@
 import passport from 'passport';
 import express from 'express'
 import { User } from './../models/user'
+import qs from 'qs';
 var userProfile: any;
 
 const router = express.Router();
@@ -59,7 +60,8 @@ router.get('/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/error' }),
     function (req, res) {
         // Successful authentication, redirect success.
-        res.redirect('http://localhost:4200/');
+        const userData=qs.stringify(userProfile);
+        res.redirect(`http://localhost:4200/?${userData}`);
     });
 
 passport.serializeUser(function (user, cb) {

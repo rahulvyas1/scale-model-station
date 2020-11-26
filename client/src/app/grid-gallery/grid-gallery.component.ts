@@ -28,7 +28,7 @@ export class GridGalleryComponent implements  OnInit, OnDestroy {
   ngOnInit(){
     this.mediaWatcher = this.media.asObservable().subscribe((change: MediaChange[]) => {
       console.log(change);
-      // this.cols = this[`cols_${change.mqAlias}`];
+      this.cols = this[`cols_${change[0].mqAlias}`];
      });
   }
 

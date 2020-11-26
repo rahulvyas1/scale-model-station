@@ -12,16 +12,18 @@ import passport from 'passport';
 import { googleAuthRouter } from './routes/google-auth';
 import { newPostRouter } from './routes/post/new';
 import { indexPostsRouter } from './routes/post/index';
+import cors from 'cors';
 const app = express();
 
-
+app.use(cors({ origin: 'http://localhost:4200', credentials: true }))
 app.set('trust proxy', true);
 app.use(json());
+
 
 app.use(
   cookieSession({
     // signed: false,
-    secret:'foo',
+    secret: 'foo',
     secure: false
     // secure: process.env.NODE_ENV !== "test"
   })

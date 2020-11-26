@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Image } from '../image.model';
 
 @Component({
   selector: 'app-all-posts',
@@ -8,14 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class AllPostsComponent implements OnInit {
 
   selectedSlide = 0;
-  slides = [
-     { text:'All',src: "http://placehold.it/350x150/000000" },
-    { text:'Aircrafts',src: "http://placehold.it/350x150/111111" },
-    {text:'AFV', src: "http://placehold.it/350x150/333333" },
-    { text:'Civil',src: "http://placehold.it/350x150/666666" },
-    {text:'Naval', src: "http://placehold.it/350x150/777777" },
-    // {text:'Diorama', img: "http://placehold.it/350x150/888888" },
-  ];
+  slides:any;
   slideConfig = { "slidesToShow": 4, "slidesToScroll": 5 };
 
   // addSlide() {
@@ -76,18 +70,37 @@ export class AllPostsComponent implements OnInit {
       background: "https://picsum.photos/seed/picsum/400/200",
     },
   ]
-  masonryItems = [
-    { title: 'item 1' },
-    { title: 'item 2' },
-    { title: 'item 3' },
-    { title: 'item 4' },
-    { title: 'item 5' },
-    { title: 'item 6' },
-    { title: 'item 7' },
-    { title: 'item 7' },
-    { title: 'item 7' },
-  ];
-  constructor() { }
+
+  numOfImages = 32;
+  images: Image [];
+
+  constructor() {
+    this.slides = this.generateImagesList();
+  }
+
+  private generateRandomImage(): Image {
+    const len = (Math.random() * (1000 - 400) + 300).toFixed();
+    const width = len;
+    const height = len;
+    return {src: `https://picsum.photos/${width}/${height}/?random`};
+  }
+
+  private generateImagesList(): Image[] {
+    const images: Image[] = [];
+    for (let i = 0; i < this.numOfImages; i++){
+      const image = this.generateRandomImage();
+      image.text = `#${i}`;
+      images.push(image);
+    }
+    return images;
+  }
+
+  addImage() {
+    const image = this.generateRandomImage();
+    image.text = `#${this.images.length}`;
+    this.images.push(image);
+  }
+
 
   ngOnInit(): void {
   }

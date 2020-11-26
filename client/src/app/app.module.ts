@@ -32,13 +32,32 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 
+import {FlexLayoutModule} from '@angular/flex-layout';
+// import {GridGalleryComponent} from ' /app/grid-gallery/grid-gallery.component';
 
+import { GridGalleryComponent } from './grid-gallery/grid-gallery.component';
+import { GridGalleryItemComponent } from './grid-gallery/grid-gallery-item/grid-gallery-item.component';
+
+
+import { MatButtonModule } from "@angular/material/button";
+import { MatGridListModule } from "@angular/material/grid-list";
+import { MatIconModule } from "@angular/material/icon";
+
+
+@NgModule({
+  exports: [
+ 
+  ]
+})
+export class MaterialModule {}
 
 @NgModule({
   declarations: [
     AppComponent,
     AllPostsComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    GridGalleryComponent,
+    GridGalleryItemComponent
   ],
   imports: [
     ButtonsModule.forRoot(),
@@ -49,6 +68,10 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     AlertModule.forRoot(),
     TabsModule.forRoot(),
     // SlickCarouselModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatIconModule,
+    FlexLayoutModule,
     FontAwesomeModule,
     NgSelectModule,
     FormsModule,
